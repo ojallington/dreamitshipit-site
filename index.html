@@ -163,18 +163,18 @@
     gap: 10px 28px;
     border-top: 1px solid var(--line);
   }
-  .yt {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    min-height: 44px;
+  .social { display: flex; gap: 6px; margin: 0; padding: 0; list-style: none; }
+  .social a {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     color: var(--muted);
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
+    transition: color .15s ease, background-color .15s ease;
   }
-  .yt:hover { color: var(--ink); }
-  .yt svg { width: 22px; height: 22px; flex: none; }
+  .social a:hover { color: var(--ink); background: var(--line); }
+  .social svg { width: 22px; height: 22px; }
   .signoff {
     margin: 0;
     font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
@@ -189,7 +189,7 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .soon::before { animation: none; }
-    .apply a { transition: none; }
+    .apply a, .social a { transition: none; }
   }
 </style>
 </head>
@@ -204,9 +204,16 @@
   </main>
   <footer>
     <p class="signoff">Dream, <b>shipped.</b></p>
-    <a class="yt" href="https://www.youtube.com/@DreamItShipIt" rel="me">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="currentColor"/><path d="M10 8.8v6.4l5.4-3.2z" fill="var(--bg)"/></svg>
-      YouTube @DreamItShipIt</a>
+    <ul class="social" aria-label="Dream it. Ship it. elsewhere">
+      <li><a href="https://www.youtube.com/@DreamItShipIt" rel="me" aria-label="YouTube @DreamItShipIt">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="currentColor"/><path d="M10 8.8v6.4l5.4-3.2z" fill="var(--bg)"/></svg></a></li>
+      <li><a href="https://www.instagram.com/dreamitshipit/" rel="me" aria-label="Instagram @dreamitshipit">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a></li>
+      <li><a href="https://www.tiktok.com/@dreamitshipit" rel="me" aria-label="TikTok @dreamitshipit">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M14.2 2.5h3.1c.2 2.2 1.7 3.9 3.9 4.1v3.1c-1.5 0-2.8-.4-3.9-1.1v6.6a5.9 5.9 0 1 1-5.9-5.9c.3 0 .6 0 .9.1v3.2a2.8 2.8 0 1 0 1.9 2.6V2.5z"/></svg></a></li>
+      <li><a href="https://x.com/dreamitshipit" rel="me" aria-label="X @dreamitshipit">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.8 3h3.2l-7 8 8.2 10h-6.4l-5-6.3L5 21H1.8l7.5-8.6L1.5 3h6.6l4.5 5.8L17.8 3zm-1.1 16.1h1.8L7.4 4.8H5.5l11.2 14.3z"/></svg></a></li>
+    </ul>
   </footer>
 </div>
 </body>
