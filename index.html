@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dream it. Ship it.</title>
+<meta name="description" content="A show where a real person brings one dream and we build it with them, live, with AI, in about an hour. Coming soon.">
+<meta name="theme-color" content="#f6f1e9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0d0c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://dreamitshipit.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dreamitshipit.com/">
+<meta property="og:title" content="Dream it. Ship it.">
+<meta property="og:description" content="Bring one dream. We build it with you, live, with AI, and you leave with it working. Coming soon.">
+<meta property="og:image" content="https://dreamitshipit.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dream it. Ship it. Coming soon.">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --bg: #f6f1e9;
+    --ink: #1a1714;
+    --muted: #6b635a;
+    --accent: #e8551c;
+    --accent-2: #f2a03d;
+    --glow: rgba(232, 85, 28, .18);
+    --line: rgba(26, 23, 20, .12);
+    --focus: #1c64d8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e0d0c;
+      --ink: #f4efe7;
+      --muted: #a79f94;
+      --accent: #ff6b2c;
+      --accent-2: #ffb454;
+      --glow: rgba(255, 107, 44, .22);
+      --line: rgba(244, 239, 231, .14);
+      --focus: #7fb2ff;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e0d0c; --ink: #f4efe7; --muted: #a79f94; --accent: #ff6b2c; --accent-2: #ffb454;
+    --glow: rgba(255, 107, 44, .22); --line: rgba(244, 239, 231, .14); --focus: #7fb2ff;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 18px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .page {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  /* One soft glow behind the title; no images, no requests */
+  .page::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: min(900px, 140vw);
+    aspect-ratio: 1;
+    left: 50%;
+    top: 42%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(closest-side, var(--glow), transparent 70%);
+    pointer-events: none;
+  }
+  main {
+    align-self: center;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 56px 16px 32px;
+    text-align: center;
+  }
+  .soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 28px;
+    padding: 7px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .soon::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 var(--glow);
+    animation: pulse 2.4s ease-out infinite;
+  }
+  h1 {
+    margin: 0;
+    font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: clamp(52px, 15vw, 132px);
+    line-height: .92;
+    letter-spacing: -.03em;
+  }
+  h1 span { display: block; }
+  h1 .ship {
+    background: linear-gradient(100deg, var(--accent) 10%, var(--accent-2) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .what {
+    max-width: 30ch;
+    margin: 30px auto 0;
+    font-size: clamp(19px, 2.6vw, 23px);
+    line-height: 1.45;
+    color: var(--ink);
+  }
+  .apply {
+    margin: 40px auto 0;
+    max-width: 34ch;
+    color: var(--muted);
+    font-size: 17px;
+  }
+  .apply a {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 14px 24px;
+    min-height: 48px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--bg);
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .apply a:hover { transform: translateY(-1px); box-shadow: 0 8px 24px var(--glow); }
+  a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+  footer {
+    padding: 22px 16px calc(22px + env(safe-area-inset-bottom));
+    text-align: center;
+    border-top: 1px solid var(--line);
+  }
+  .signoff {
+    margin: 0;
+    font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-style: italic;
+    font-size: 20px;
+  }
+  .signoff b { color: var(--accent); font-weight: 700; font-style: normal; }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 var(--glow); }
+    70% { box-shadow: 0 0 0 10px transparent; }
+    100% { box-shadow: 0 0 0 0 transparent; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .soon::before { animation: none; }
+    .apply a { transition: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <main>
+    <p class="soon">Coming soon</p>
+    <h1><span>Dream it.</span><span class="ship">Ship it.</span></h1>
+    <p class="what">Bring one thing you've always wanted to make. We build it together with AI, live, in about an hour, and you leave with it working.</p>
+    <p class="apply">Have a dream you want built?<br>
+      <a href="mailto:oscar@decodifai.com?subject=Dream%20it.%20Ship%20it.%20guest">Apply to be our next guest</a></p>
+  </main>
+  <footer>
+    <p class="signoff">Dream, <b>shipped.</b></p>
+  </footer>
+</div>
+</body>
+</html>
