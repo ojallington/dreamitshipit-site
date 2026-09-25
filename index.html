@@ -156,9 +156,25 @@
   a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
   footer {
     padding: 22px 16px calc(22px + env(safe-area-inset-bottom));
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 28px;
     border-top: 1px solid var(--line);
   }
+  .yt {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .yt:hover { color: var(--ink); }
+  .yt svg { width: 22px; height: 22px; flex: none; }
   .signoff {
     margin: 0;
     font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
@@ -184,10 +200,13 @@
     <h1><span>Dream it.</span><span class="ship">Ship it.</span></h1>
     <p class="what">Bring one thing you've always wanted to make. We build it together with AI, live, in about an hour, and you leave with it working.</p>
     <p class="apply">Have a dream you want built?<br>
-      <a href="mailto:oscar@decodifai.com?subject=Dream%20it.%20Ship%20it.%20guest">Apply to be our next guest</a></p>
+      <a href="mailto:hello@dreamitshipit.com?subject=Dream%20it.%20Ship%20it.%20guest">Apply to be our next guest</a></p>
   </main>
   <footer>
     <p class="signoff">Dream, <b>shipped.</b></p>
+    <a class="yt" href="https://www.youtube.com/@DreamItShipIt" rel="me">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="currentColor"/><path d="M10 8.8v6.4l5.4-3.2z" fill="var(--bg)"/></svg>
+      YouTube @DreamItShipIt</a>
   </footer>
 </div>
 </body>
